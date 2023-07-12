@@ -1,0 +1,14 @@
+#!/bin/bash
+
+echo "Enter number of tasks: " 
+read n_tasks 
+
+for ((i = 0; i <= ${n_tasks}; i++))
+do 
+	echo "Enter task(${i}) name: "
+	read t_name
+	echo "Enter task(${i}) answer: "
+	read t_answer
+	echo -e "#!/bin/bash\n${t_answer}" > ${t_name}
+	chmod +x ${t_name}
+done
